@@ -22,8 +22,8 @@ const App = () => (
             <Route exact path="/public_list" component={PublicList}/>
             <Route exact path="/secret_list" component={secret_list}/>
             <Route exact path="/quotes" component={Quotes}/>
-            <Route exact path="/sign-in" component={SignIn}/>
-            <Route exact path="/sign-up" component={SignUp}/>
+            <Route exact path="/sign_in" component={SignIn}/>
+            <Route exact path="/sign_up" component={SignUp}/>
 
         </div>
     </div>
