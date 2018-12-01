@@ -7,10 +7,11 @@ import Home from './home';
 import Nav from './nav';
 import PublicList from './public_list';
 import Quotes from './quotes';
-import SecretList from './secret_list';
 import SignIn from './sign_in';
 import SignUp from './sign_up';
 import secret_list from './secret_list';
+
+import auth from '../hoc/auth'
 
 
 const App = () => (
@@ -21,10 +22,9 @@ const App = () => (
             <Route exact path="/about" component={About}/>
             <Route exact path="/public_list" component={PublicList}/>
             <Route exact path="/secret_list" component={secret_list}/>
-            <Route exact path="/quotes" component={Quotes}/>
-            <Route exact path="/sign_in" component={SignIn}/>
-            <Route exact path="/sign_up" component={SignUp}/>
-
+            <Route exact path="/quotes" component={auth(Quotes)}/>
+            <Route exact path="/sign_in" component={auth(SignIn, '/quotes', false)}/>
+            <Route exact path="/sign_up" component={auth(SignUp, '/quotes', false)}/>
         </div>
     </div>
 );
